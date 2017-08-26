@@ -49,13 +49,30 @@
            <asp:GridView runat="server" ID="produtosGridView" AutoGenerateColumns="false" Width="100%">
                
                <Columns>
-                   <asp:BoundField   
+                   <asp:BoundField DataField="ProductName" HeaderText="Nome" />
+                   <asp:BoundField DataField="UnitPrice" HeaderText="Preço" />
+                   <asp:BoundField DataField="UnitsInStock" HeaderText="Estoque" />
+                 
 
 
                </Columns>      
                    
            </asp:GridView>
+            <asp:ObjectDataSource ID="ProdutoPorCategoriaObjetcDataSource"
+                        TypeName="Nothwind.Repositorios.SqlServer.Ado.ProdutoRepositorio"
+                        SelectMethod="SelecionarPorCategoria" runat="server">
 
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="CategoriaDropDownList" 
+                        
+                        PropertyName="SelectedValue"
+                        Name="categoriaId"
+                        Type="Int32"/>
+
+                </SelectParameters>
+            </asp:ObjectDataSource>
+                   
+           
         </div>
     </div>
 
