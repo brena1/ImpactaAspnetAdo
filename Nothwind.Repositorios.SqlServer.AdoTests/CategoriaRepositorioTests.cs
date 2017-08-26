@@ -14,8 +14,8 @@ namespace Nothwind.Repositorios.SqlServer.Ado.Tests
 
             var categoriaDataTable = categoriaRepositorio.Selecionar();
 
-            //
-
+            Assert.AreNotEqual(categoriaDataTable.Rows.Count, 0);
+            Console.WriteLine(categoriaDataTable.Rows[0][1]);
 
             foreach (DataRow registro in categoriaDataTable.Rows)
             {
