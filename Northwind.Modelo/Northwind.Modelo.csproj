@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3ECEB2ED-FD81-4E36-B132-B76402042845}</ProjectGuid>
+    <ProjectGuid>{9207D07F-87BD-4FE9-ABE9-4E35DC1F5E4C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nothwind.Repositorios.SqlServer.Ado</RootNamespace>
-    <AssemblyName>Nothwind.Repositorios.SqlServer.Ado</AssemblyName>
+    <RootNamespace>Northwind.Modelo</RootNamespace>
+    <AssemblyName>Northwind.Modelo</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,7 +31,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,19 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FornecedorRepositorio.cs" />
-    <Compile Include="CategoriaRepositorio.cs" />
-    <Compile Include="ProdutoRepositorio.cs" />
+    <Compile Include="Transportadora.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepositorioDataTableBase.cs" />
-    <Compile Include="RepositorioListBase.cs" />
-    <Compile Include="TransportadoraRepositorio.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Northwind.Modelo\Northwind.Modelo.csproj">
-      <Project>{9207D07F-87BD-4FE9-ABE9-4E35DC1F5E4C}</Project>
-      <Name>Northwind.Modelo</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

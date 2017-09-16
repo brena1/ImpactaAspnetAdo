@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E10BE05B-7027-4244-9AC0-285BC5DC1180}</ProjectGuid>
+    <ProjectGuid>{71DBBA13-19DA-420D-B7EB-02BE390D1105}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nothwind.Repositorios.SqlServer.AdoTests</RootNamespace>
-    <AssemblyName>Nothwind.Repositorios.SqlServer.AdoTests</AssemblyName>
+    <RootNamespace>Loja.Repositorios.SqlServer.EFTests</RootNamespace>
+    <AssemblyName>Loja.Repositorios.SqlServer.EFTests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -36,8 +36,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Data" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -52,24 +60,25 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="CategoriaRepositorioTests.cs" />
-    <Compile Include="FornecedorRepositorioTests.cs" />
-    <Compile Include="ProdutoRepositorioTests.cs" />
+    <Compile Include="LojaDbContextTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TransportadoraRepositorioTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Northwind.Modelo\Northwind.Modelo.csproj">
-      <Project>{9207d07f-87bd-4fe9-abe9-4e35dc1f5e4c}</Project>
-      <Name>Northwind.Modelo</Name>
+    <ProjectReference Include="..\Loja.Modelo\Loja.Modelo.csproj">
+      <Project>{a1b4b000-d272-414e-8e98-86119227453a}</Project>
+      <Name>Loja.Modelo</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nothwind.Repositorios.SqlServer.Ado\Nothwind.Repositorios.SqlServer.Ado.csproj">
-      <Project>{3ECEB2ED-FD81-4E36-B132-B76402042845}</Project>
-      <Name>Nothwind.Repositorios.SqlServer.Ado</Name>
+    <ProjectReference Include="..\Loja.Repositorios.SqlServer.EF\Loja.Repositorios.SqlServer.EF.csproj">
+      <Project>{C73263F5-A710-403C-BB4A-E3626BBE001F}</Project>
+      <Name>Loja.Repositorios.SqlServer.EF</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ModelConfiguration\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
