@@ -14,5 +14,6 @@ namespace Loja.Modelo
         public string Nome { get; set; }
         public decimal Preco { get; set; }
         public int Estoque { get; set; }
+        public bool Descontinuado { get; set; }
     }
 }

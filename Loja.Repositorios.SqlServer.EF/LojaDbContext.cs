@@ -9,7 +9,8 @@ namespace Loja.Repositorios.SqlServer.EF
     {
         public LojaDbContext() : base("name=lojaConnectionString") 
         {
-                
+            //pag 191 estrategias de inicialização
+            Database.SetInitializer(new LojaDbInitializer());  
         }
 
         public DbSet<Produto> Produtos { get; set; }
